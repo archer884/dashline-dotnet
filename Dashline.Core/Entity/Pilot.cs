@@ -4,13 +4,10 @@ public class Pilot
 {
     public int ID { get; set; } = 0;
     public DateTimeOffset CreatedDate { get; set; }
-    
-    // FIXME: Why does this need to be nullable?
-    public string? Name { get; set; }
+    public string Name { get; set; } = null!;
 
-    // FIXME: And these! These are EF navigation properties, for heaven's sake!
-    public ICollection<Plan>? Legs { get; set; }
-    public ICollection<Flight>? Flights { get; set; }
+    public ICollection<Plan> Legs { get; set; } = null!;
+    public ICollection<Flight> Flights { get; set; } = null!;
 
     public Pilot() { }
 

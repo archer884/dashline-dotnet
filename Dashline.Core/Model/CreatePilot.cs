@@ -8,6 +8,11 @@ public class CreatePilot
 
     public Pilot AsPilot()
     {
+        if (Name == null)
+        {
+            throw new ArgumentNullException(nameof(Name));
+        }
+
         return new Pilot
         {
             Name = Name,
